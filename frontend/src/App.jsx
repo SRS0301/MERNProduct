@@ -1,16 +1,20 @@
+import React from "react";
 import Nav1 from "./Units/Nav1";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Additem from "./Pages/Additem";
 
-function App() {
+export default function App() {
   return (
-    <div class="d-flex justify-content-between">
-      <div> 
-        <Nav1/>
-      <h1 className="text-center">PRODUCTS </h1>
-      <button style={{}}>ADD</button>
-      </div>
-      
+    <div>
+      <Nav1 />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/additem" element={<Additem />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
